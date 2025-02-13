@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {Canvas, Path} from '@shopify/react-native-skia';
 
 // constants
@@ -17,7 +17,13 @@ const OnboardingScreen = () => {
       <Canvas style={styles.topCanvas}>
         <Path path={Shapes.topShapePath} color={Colors.primaryVariant1} />
       </Canvas>
-      <AppText text="Onboarding screen" />
+      <View style={styles.contentContainer}>
+        <AppText text="WashEase" textStyle={styles.title} />
+        <AppText
+          text={`Get ready to make your life easy\nwith single click of app. Which makes\nlaundry things handle better`}
+          textStyle={styles.tagLine}
+        />
+      </View>
       <Canvas style={styles.bottomCanvas}>
         <Path
           path={Shapes.bottomShapePath}
@@ -44,6 +50,20 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 0,
     left: 0,
+  },
+  contentContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  title: {
+    fontFamily: Constants.FONTS.Bold,
+    fontSize: 33,
+  },
+  tagLine: {
+    fontFamily: Constants.FONTS.Regular,
+    fontSize: 14,
+    textAlign: 'center',
   },
 });
 
