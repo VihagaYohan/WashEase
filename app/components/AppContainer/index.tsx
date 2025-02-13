@@ -1,5 +1,6 @@
 import React from 'react';
-import {StyleSheet, SafeAreaView, ViewStyle} from 'react-native';
+import {StyleSheet, ViewStyle} from 'react-native';
+import {useSafeAreaInsets, SafeAreaView} from 'react-native-safe-area-context';
 
 // constants
 import {Constants, Colors} from '../../utils';
@@ -14,6 +15,7 @@ interface propTypes {
 
 const AppContainer = ({children, containerStyle}: propTypes) => {
   const deviceTheme = useDeviceTheme();
+  const insets = useSafeAreaInsets();
 
   return (
     <SafeAreaView
@@ -21,6 +23,7 @@ const AppContainer = ({children, containerStyle}: propTypes) => {
         ...styles.container,
         ...containerStyle,
         backgroundColor: deviceTheme === 'dark' ? Colors.black : Colors.white,
+        paddingBottom: insets.bottom,
       }}>
       {children}
     </SafeAreaView>
@@ -31,6 +34,7 @@ const styles = StyleSheet.create({
   container: {
     width: Constants.SCREEN_WIDTH,
     height: Constants.SCREEN_HEIGHT,
+    paddingHorizontal: Constants.SPACES.small,
   },
 });
 

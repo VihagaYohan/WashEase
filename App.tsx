@@ -6,18 +6,16 @@
  */
 
 import React from 'react';
-import {AppText, AppButton, AppContainer} from './app/components';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
+
+// screens
+import {OnboardingScreen} from './app/screens';
 
 const App = () => {
   return (
-    <AppContainer>
-      <AppText text="Hello, world" />
-      <AppButton
-        label="Click me"
-        onPress={() => console.log('hello, world')}
-        isPrimary={false}
-      />
-    </AppContainer>
+    <SafeAreaProvider>
+      <OnboardingScreen />
+    </SafeAreaProvider>
   );
 };
 
