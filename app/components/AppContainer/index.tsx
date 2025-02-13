@@ -1,6 +1,10 @@
 import React from 'react';
 import {StyleSheet, ViewStyle} from 'react-native';
-import {useSafeAreaInsets, SafeAreaView} from 'react-native-safe-area-context';
+import {
+  useSafeAreaInsets,
+  SafeAreaView,
+  Edge,
+} from 'react-native-safe-area-context';
 
 // constants
 import {Constants, Colors} from '../../utils';
@@ -11,9 +15,14 @@ import {useDeviceTheme} from '../../hooks';
 interface propTypes {
   children: React.ReactNode;
   containerStyle?: ViewStyle;
+  edges?: Edge[];
 }
 
-const AppContainer = ({children, containerStyle}: propTypes) => {
+const AppContainer = ({
+  children,
+  containerStyle,
+  edges = ['top', 'bottom', 'right', 'left'],
+}: propTypes) => {
   const deviceTheme = useDeviceTheme();
   const insets = useSafeAreaInsets();
 
@@ -21,10 +30,11 @@ const AppContainer = ({children, containerStyle}: propTypes) => {
     <SafeAreaView
       style={{
         ...styles.container,
-        ...containerStyle,
         backgroundColor: deviceTheme === 'dark' ? Colors.black : Colors.white,
+        ...containerStyle,
         paddingBottom: insets.bottom,
-      }}>
+      }}
+      edges={edges}>
       {children}
     </SafeAreaView>
   );
