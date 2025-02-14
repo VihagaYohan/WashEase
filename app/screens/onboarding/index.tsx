@@ -1,6 +1,6 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
-import {Canvas, Path} from '@shopify/react-native-skia';
+import {StyleSheet, View, TouchableOpacity} from 'react-native';
+import {Canvas, Path, ImageSVG, useSVG} from '@shopify/react-native-skia';
 
 // constants
 import {Colors, Constants} from '../../utils';
@@ -12,17 +12,29 @@ import {AppContainer, AppText} from '../../components';
 import {Shapes} from '../../widgets';
 
 const OnboardingScreen = () => {
+  const sourceImage = useSVG(require('../../assets/images/onboarding.svg'));
   return (
     <AppContainer containerStyle={styles.contianer} edges={[]}>
       <Canvas style={styles.topCanvas}>
         <Path path={Shapes.topShapePath} color={Colors.primaryVariant1} />
       </Canvas>
       <View style={styles.contentContainer}>
+        <Canvas style={styles.image}>
+          <ImageSVG svg={sourceImage} width={300} height={300} />
+        </Canvas>
         <AppText text="WashEase" textStyle={styles.title} />
         <AppText
-          text={`Get ready to make your life easy\nwith single click of app. Which makes\nlaundry things handle better`}
+          text={
+            'Fresh Clothes, Fresh Start – Effortless Laundry at Your Fingertips!'
+          }
           textStyle={styles.tagLine}
         />
+
+        <TouchableOpacity
+          onPress={() => console.log('get started')}
+          style={styles.getStatedButton}>
+          <AppText text="Get Started" />
+        </TouchableOpacity>
       </View>
       <Canvas style={styles.bottomCanvas}>
         <Path
@@ -56,14 +68,23 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  image: {width: 300, height: 300},
   title: {
     fontFamily: Constants.FONTS.Bold,
     fontSize: 33,
+    marginBottom: Constants.SPACES.large,
   },
   tagLine: {
     fontFamily: Constants.FONTS.Regular,
-    fontSize: 14,
+    fontSize: 15,
     textAlign: 'center',
+  },
+  getStatedButton: {
+    backgroundColor: Colors.secondary,
+    paddingVertical: Constants.SPACES.medium,
+    paddingHorizontal: Constants.SPACES.large,
+    borderRadius: Constants.SPACES.medium,
+    marginTop: Constants.SPACES.large,
   },
 });
 
