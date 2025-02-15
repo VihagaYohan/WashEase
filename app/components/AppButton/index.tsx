@@ -1,5 +1,6 @@
 import React from 'react';
 import {StyleSheet, TouchableOpacity, ViewStyle, TextStyle} from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 // components
 import {AppText} from '../';
@@ -16,6 +17,9 @@ interface propTypes {
   isPrimary?: boolean;
   buttonStyle?: ViewStyle;
   labelStyle?: TextStyle;
+  showIcon?: boolean;
+  leadingIcon?: any;
+  trailingIcon?: any;
 }
 
 const AppButton = ({
@@ -24,6 +28,9 @@ const AppButton = ({
   isPrimary = true,
   buttonStyle,
   labelStyle,
+  showIcon = false,
+  leadingIcon,
+  trailingIcon,
 }: propTypes) => {
   const deviceTheme = useDeviceTheme();
   return (
@@ -39,6 +46,19 @@ const AppButton = ({
         borderColor: Colors.primary,
       }}
       onPress={() => onPress()}>
+      {showIcon && leadingIcon && (
+        <Icon
+          name={leadingIcon}
+          size={25}
+          color={
+            isPrimary
+              ? Colors.white
+              : deviceTheme === 'dark'
+              ? Colors.white
+              : Colors.primary
+          }
+        />
+      )}
       <AppText
         text={label}
         textStyle={{
@@ -47,6 +67,19 @@ const AppButton = ({
           color: isPrimary ? Colors.white : Colors.primary,
         }}
       />
+      {showIcon && trailingIcon && (
+        <Icon
+          name={trailingIcon}
+          size={25}
+          color={
+            isPrimary
+              ? Colors.white
+              : deviceTheme === 'dark'
+              ? Colors.white
+              : Colors.primary
+          }
+        />
+      )}
     </TouchableOpacity>
   );
 };
