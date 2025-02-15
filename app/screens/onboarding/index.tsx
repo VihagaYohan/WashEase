@@ -1,6 +1,7 @@
 import React from 'react';
 import {StyleSheet, View, TouchableOpacity} from 'react-native';
 import {Canvas, Path, ImageSVG, useSVG} from '@shopify/react-native-skia';
+import {useNavigation} from '@react-navigation/native';
 
 // constants
 import {Colors, Constants} from '../../utils';
@@ -12,6 +13,7 @@ import {AppContainer, AppText} from '../../components';
 import {Shapes} from '../../widgets';
 
 const OnboardingScreen = () => {
+  const navigation = useNavigation();
   const sourceImage = useSVG(require('../../assets/images/onboarding.svg'));
   return (
     <AppContainer containerStyle={styles.contianer} edges={[]}>
@@ -31,18 +33,18 @@ const OnboardingScreen = () => {
         />
 
         <TouchableOpacity
-          onPress={() => console.log('get started')}
+          onPress={() => navigation.navigate('Login')}
           style={styles.getStatedButton}>
           <AppText text="Get Started" />
         </TouchableOpacity>
       </View>
-      <Canvas style={styles.bottomCanvas}>
+      {/*    <Canvas style={styles.bottomCanvas}>
         <Path
           path={Shapes.bottomShapePath}
           style="fill"
           color={Colors.primaryVariant1}
         />
-      </Canvas>
+      </Canvas> */}
     </AppContainer>
   );
 };
@@ -67,6 +69,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    paddingHorizontal: Constants.SPACES.medium,
   },
   image: {width: 300, height: 300},
   title: {
@@ -75,7 +78,7 @@ const styles = StyleSheet.create({
     marginBottom: Constants.SPACES.large,
   },
   tagLine: {
-    fontFamily: Constants.FONTS.Regular,
+    fontFamily: Constants.FONTS.Medium,
     fontSize: 15,
     textAlign: 'center',
   },

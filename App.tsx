@@ -8,15 +8,11 @@
 import React from 'react';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 
-// screens
-import {OnboardingScreen} from './app/screens';
+// navigation
+import {RootNavigator} from './app/navigation';
 
 const App = () => {
-  return (
-    <SafeAreaProvider>
-      <OnboardingScreen />
-    </SafeAreaProvider>
-  );
+  return <RootNavigator />;
 };
 
 export default App;

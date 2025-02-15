@@ -30,7 +30,7 @@ const AppContainer = ({
     <SafeAreaView
       style={{
         ...styles.container,
-        backgroundColor: deviceTheme === 'dark' ? Colors.black : Colors.white,
+        backgroundColor: deviceTheme === 'dark' ? Colors.black : Colors.white1,
         ...containerStyle,
         paddingBottom: insets.bottom,
       }}

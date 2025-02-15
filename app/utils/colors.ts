@@ -4,6 +4,7 @@ const COLORS = {
   secondary: '#DB7134',
   black: '#1B1C1E',
   white: '#fff',
+  white1: '#ECEFF1',
 };
 
 export default COLORS;
