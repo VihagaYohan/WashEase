@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1029792029756",
+    "project_id": "washease-2b37d",
+    "storage_bucket": "washease-2b37d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1029792029756:android:68767ad7d336cc8ed93739",
+        "android_client_info": {
+          "package_name": "com.washease"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUyYqU9-fvQloeJI8IrU4ag0quSvN2zfA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
