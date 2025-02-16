@@ -34,7 +34,7 @@ const LoginScreen = () => {
         }}
       />
       <AppButton
-        label="Login with google login"
+        label="Login with google"
         onPress={() => navigation.navigate('Home')}
         showIcon={true}
         trailingIcon="google"
