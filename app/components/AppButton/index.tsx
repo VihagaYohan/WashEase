@@ -78,6 +78,7 @@ const AppButton = ({
               ? Colors.white
               : Colors.primary
           }
+          style={styles.icon}
         />
       )}
     </TouchableOpacity>
@@ -88,13 +89,18 @@ const styles = StyleSheet.create({
   button: {
     borderWidth: 1.5,
     paddingVertical: Constants.SPACES.medium,
+    paddingHorizontal: Constants.SPACES.medium,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: Constants.SPACES.large,
+    flexDirection: 'row',
   },
   label: {
     fontSize: Constants.FONT_SIZE.medium,
     fontFamily: Constants.FONTS.SemiBold,
+  },
+  icon: {
+    marginLeft: Constants.SPACES.small,
   },
 });
 
