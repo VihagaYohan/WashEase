@@ -25,7 +25,7 @@ const HomeScreen = () => {
 
 const styles = StyleSheet.create({
   backgroundOverlay: {
-    height: Constants.SCREEN_HEIGHT * 0.4,
+    height: Constants.SCREEN_HEIGHT * 0.5,
     width: Constants.SCREEN_WIDTH,
     backgroundColor: Colors.primary,
     position: 'absolute',
