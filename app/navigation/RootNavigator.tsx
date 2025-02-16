@@ -2,7 +2,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import type {StaticParamList} from '@react-navigation/native';
 
 // screens
-import {OnboardingScreen, LoginScreen} from '../screens';
+import {OnboardingScreen, LoginScreen, HomeScreen} from '../screens';
 
 // navigation
 import {Routes} from './index';
@@ -19,6 +19,9 @@ export const RootStack = createNativeStackNavigator({
     },
     Login: {
       screen: LoginScreen,
+    },
+    Home: {
+      screen: HomeScreen,
     },
   },
 });

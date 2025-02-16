@@ -1,5 +1,6 @@
 import React from 'react';
 import {StyleSheet} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 
 // components
 import {AppButton, AppContainer, AppText} from '../../components';
@@ -12,6 +13,7 @@ import {useDeviceTheme} from '../../hooks';
 
 const LoginScreen = () => {
   const deviceTheme = useDeviceTheme();
+  const navigation = useNavigation();
   return (
     <AppContainer
       containerStyle={{
@@ -33,7 +35,7 @@ const LoginScreen = () => {
       />
       <AppButton
         label="Login with google login"
-        onPress={() => console.log('google login')}
+        onPress={() => navigation.navigate('Home')}
         showIcon={true}
         trailingIcon="google"
       />
