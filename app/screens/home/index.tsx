@@ -3,13 +3,13 @@ import {StyleSheet, View} from 'react-native';
 import {Canvas, Path} from '@shopify/react-native-skia';
 
 // components
-import {AppContainer} from '../../components';
+import {AppContainer, AppText} from '../../components';
 
 // constants
 import {Colors, Constants} from '../../utils';
 
 // widgets
-import {WelcomeTitle, Shapes} from '../../widgets';
+import {WelcomeTitle, Shapes, HomeCarousel} from '../../widgets';
 
 const HomeScreen = () => {
   return (
@@ -19,6 +19,8 @@ const HomeScreen = () => {
       </Canvas>
       <View style={styles.backgroundOverlay} />
       <WelcomeTitle />
+
+      <HomeCarousel />
     </AppContainer>
   );
 };

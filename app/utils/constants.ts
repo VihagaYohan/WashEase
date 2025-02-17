@@ -24,7 +24,11 @@ const FONT_SIZE = {
   large: 20,
 };
 
+// device screen width and height
 const {width, height} = Dimensions.get('screen');
+
+// home screen carousel card width
+const CARD_WIDTH = width - SPACES.small * 3;
 
 export default {
   FONTS,
@@ -32,4 +36,5 @@ export default {
   SCREEN_WIDTH: width,
   SCREEN_HEIGHT: height,
   FONT_SIZE,
+  CARD_WIDTH,
 };
