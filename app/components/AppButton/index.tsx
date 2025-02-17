@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: Constants.SPACES.medium,
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: Constants.SPACES.large,
+    borderRadius: Constants.SPACES.large * 2,
     flexDirection: 'row',
   },
   label: {
