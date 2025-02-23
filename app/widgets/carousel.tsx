@@ -27,13 +27,14 @@ const HomeCarousel = () => {
       }}>
       <Animated.FlatList
         data={DATA}
-        keyExtractor={(_, index) => `carousel-item-${index}`}
+        keyExtractor={(_, index) => `carousel-${index}`}
         horizontal
         pagingEnabled
         showsHorizontalScrollIndicator={false}
         renderItem={({item, index}) => {
           return (
             <HomeCarouselPage
+              key={`carousel-item-${index}`}
               item={item}
               index={index}
               translateX={translateX}

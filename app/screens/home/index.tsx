@@ -3,7 +3,7 @@ import {StyleSheet, View} from 'react-native';
 import {Canvas, Path} from '@shopify/react-native-skia';
 
 // components
-import {AppContainer, AppText} from '../../components';
+import {AppContainer} from '../../components';
 
 // constants
 import {Colors, Constants} from '../../utils';
