@@ -9,7 +9,7 @@ import {AppContainer} from '../../components';
 import {Colors, Constants} from '../../utils';
 
 // widgets
-import {WelcomeTitle, Shapes, HomeCarousel} from '../../widgets';
+import {WelcomeTitle, Shapes, HomeCarousel, SubTitle} from '../../widgets';
 
 const HomeScreen = () => {
   return (
@@ -21,6 +21,13 @@ const HomeScreen = () => {
       <WelcomeTitle />
 
       <HomeCarousel />
+
+      <SubTitle
+        title="Services"
+        isAction={true}
+        actionTitle="View all"
+        onPress={() => console.log('view all pressed')}
+      />
     </AppContainer>
   );
 };
