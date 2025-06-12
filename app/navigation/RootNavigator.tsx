@@ -1,13 +1,47 @@
+/* eslint-disable react/react-in-jsx-scope */
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import type {StaticParamList} from '@react-navigation/native';
 
 // screens
-import {OnboardingScreen, LoginScreen, HomeScreen} from '../screens';
+import {
+  OnboardingScreen,
+  LoginScreen,
+  HomeScreen,
+  BookingScreen,
+  LocationsScreen,
+  ProfileScreen,
+} from '../screens';
 
 // navigation
-import {Routes} from './index';
+import {Routes, CustomTabBar} from './index';
 import {createStaticNavigation} from '@react-navigation/native';
 
+// bottom tab navigator
+const Tabs = createBottomTabNavigator({
+  initialRouteName: Routes.home,
+  tabBar: props => <CustomTabBar {...props} />,
+  screenOptions: {
+    headerShown: false,
+  },
+  screens: {
+    Home: {
+      screen: HomeScreen,
+      options: {},
+    },
+    Booking: {
+      screen: BookingScreen,
+    },
+    Locations: {
+      screen: LocationsScreen,
+    },
+    Profile: {
+      screen: ProfileScreen,
+    },
+  },
+});
+
+// root stack navigator
 export const RootStack = createNativeStackNavigator({
   initialRouteName: Routes.onboarding,
   screenOptions: {
@@ -21,7 +55,7 @@ export const RootStack = createNativeStackNavigator({
       screen: LoginScreen,
     },
     Home: {
-      screen: HomeScreen,
+      screen: Tabs,
     },
   },
 });

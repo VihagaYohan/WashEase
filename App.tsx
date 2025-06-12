@@ -6,7 +6,6 @@
  */
 
 import React from 'react';
-import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 // navigation
 import {RootNavigator} from './app/navigation';
