@@ -70,7 +70,8 @@ const CustomTabBar = ({state, descriptors, navigation}: BottomTabBarProps) => {
             accessibilityLabel={options.tabBarAccessibilityLabel}
             testID={options.tabBarButtonTestID}
             onPress={onPress}
-            style={styles.tabbarItem}>
+            style={styles.tabbarItem}
+            android_ripple={{color:'transparent'}}>
             {icon[route.name]({
               color: isFocused
                 ? Colors.primary

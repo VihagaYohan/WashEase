@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   title: {
-    fontSize: Constants.FONT_SIZE.medium * 1.5,
+    fontSize: Constants.FONT_SIZE.medium * 1.2,
   },
   action: {
     justifyContent: 'center',
