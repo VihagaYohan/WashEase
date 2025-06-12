@@ -3,13 +3,19 @@ import {StyleSheet, View} from 'react-native';
 import {Canvas, Path} from '@shopify/react-native-skia';
 
 // components
-import {AppContainer, AppText} from '../../components';
+import {AppContainer} from '../../components';
 
 // constants
 import {Colors, Constants} from '../../utils';
 
 // widgets
-import {WelcomeTitle, Shapes, HomeCarousel} from '../../widgets';
+import {
+  WelcomeTitle,
+  Shapes,
+  HomeCarousel,
+  SubTitle,
+  Spacer,
+} from '../../widgets';
 
 const HomeScreen = () => {
   return (
@@ -21,6 +27,15 @@ const HomeScreen = () => {
       <WelcomeTitle />
 
       <HomeCarousel />
+
+      <Spacer />
+      <SubTitle
+        title="Services"
+        isAction={true}
+        actionTitle="View all"
+        onPress={() => console.log('view all pressed')}
+      />
+      <Spacer />
     </AppContainer>
   );
 };

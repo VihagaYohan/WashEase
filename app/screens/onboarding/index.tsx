@@ -88,6 +88,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: Constants.SPACES.large,
     borderRadius: Constants.SPACES.medium,
     marginTop: Constants.SPACES.large,
+    marginBottom: Constants.SPACES.large
   },
 });
 
